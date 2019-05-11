@@ -12,3 +12,7 @@ and access ``http://127.0.0.1:3000/data`` to get an array of data.
 If you want to retrieve just a subset, specify the lower and upper limit as query parameters, for example:
 
     http://127.0.0.1:3000/data?_start=8&_end=12
+    
+NOTE added by Maurice Walker - 
+
+Please run Code Test app by accessing http://127.0.0.1:3000/
