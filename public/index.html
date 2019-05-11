@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DealerOn Creative Token - Maurice Walker Code Test</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">DealerOn Creative Token (DOC)</a>
+			</header>
+
+		<!-- Highlights -->
+			<section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>DOC Token - Cryptocurrency for the Future of Auto E-Commerce</h2>
+					</header>
+					<div class="highlights">
+						<section>
+							<div class="content">
+								<header>
+									<a href="#" class="icon fa-vcard-o"><span class="label">Icon</span></a>
+									<h3>Instant Payments</h3>
+								</header>
+								<p>Customers on sites of DealerOn clients may buy cars instantly without ACH holds/International Wire delays.</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="#" class="icon fa-files-o"><span class="label">Icon</span></a>
+									<h3>Fee-less Transactions</h3>
+								</header>
+								<p>No more nickel and diming - get rid of credit card processing fees, merchant fees, Paypal fees and help yourself and customers save big.</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="#" class="icon fa-floppy-o"><span class="label">Icon</span></a>
+									<h3>Secure, Transparent on Blockchain</h3>
+								</header>
+								<p>Guarantee your money is paid and settled anytime from anywhere since all transactions exist on blockchain.</p>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+
+		<!-- CTA -->
+			<section id="cta" class="wrapper">
+				<div class="inner">
+					<h2>DOC Token - New Money for the Future of Auto E-Commerce</h2>
+					<p>DealerOn customers get the luxury of accepting DOC tokens from their customers. No Paypal fees, no online merchant fees, no credit card transaction fees, nada!
+					   The future of money for online auto sales has finally arrived.
+					</p>
+				</div>
+			</section>
+
+		<!-- Testimonials -->
+			<section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>Even Geniuses Agree</h2>
+						<p>Doesn't it seem like the smartest people in the world come up with the wackiest, most out-of-this-world ideas? Well, let's add your own internet money for instant online transactions and complete transparency via blockchain tech to the list. </p>
+					</header>
+					<div id="geniusData" class="testimonials">
+						<!-- LIVE DATA -->
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<h3>DealerOn Front End Developer Role</h3>
+							<p>This sample web app is for DealerOn code test for Front End Developer. Data from provided API has been exposed in the above section.
+								Thank you for opportunity to code test. I'd look forward to potential next steps and meeting you and your awesome team in-person! 
+								Thank you and have a great day.
+							</p>
+						</section>
+						<section>
+							<h4>Why DealerOn Creative and me?</h4>
+							<ul class="alt">
+								<li><a href="#">Online Car Sales market is booming.</a></li>
+								<li><a href="#">DealerOn has proven result from satisfied customers; I'd like to add to contribute my talents to further tradition.</a></li>
+								<li><a href="#">As your developer, I'd help solve a big problem that remains challenging and engaging which I enjoy.</a></li>
+								<li><a href="#">I'm a great team player and would fit in to your results-driven, detail-oriented team.</a></li>
+							</ul>
+						</section>
+						<section>
+							<h4>DealerOn Creative Social</h4>
+							<ul class="plain">
+								<li><a href="https://twitter.com/DealerOn" target="_blank"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+								<li><a href="https://www.facebook.com/dealeron/" target="_blank"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+								<li><a href="https://www.instagram.com/dealeron_inc/" target="_blank"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+								<li><a href="https://github.com/DOCreativeOps/" target="_blank"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+						&copy; <a href="http://yourperfectweb.com">Maurice Walker</a> Code Test for DealerOn Front End Developer Role.
+					</div>
+				</div>
+			</footer>
+
+			<script>
+				fetch('/data')
+					.then(function (response) {
+						return response.json();
+					})
+					.then(function (data) {
+						addGeniusData(data);
+					})
+					.catch(function (err) {
+						console.log('error: ' + err);
+					});
+
+				function addGeniusData(data) {
+					var mainContainer = document.getElementById("geniusData");
+					for (var i = 0; i < data.length; i++) {
+						var section = document.createElement("section");
+						var divContent = document.createElement("div");
+						divContent.classList.add("content");
+						var blockquote = document.createElement("blockquote");
+						var p1 = document.createElement("p");
+						var p2 = document.createElement("p"); 
+						p2.classList.add("credit");
+						var div1 = document.createElement("div");
+						div1.classList.add("credit");
+						var div2 = document.createElement("div");
+						div2.classList.add("credit");
+						var img = document.createElement("img");
+						img.src = data[i].image_url;
+						p1.innerHTML = data[i].quote;
+						p2.innerHTML = "<strong>" + data[i].name + "</strong> - <span>" +  data[i].birthday + "</span>";
+						img.innerHTML = data[i].quote;
+						var sectional = mainContainer.appendChild(section).appendChild(divContent);
+						sectional.appendChild(blockquote).append(p1);
+						sectional.appendChild(div1).appendChild(div2).appendChild(img);
+						sectional.appendChild(p2);
+					}
+				}
+			</script>
+
+	</body>
+</html>
